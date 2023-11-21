@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="minHeap.h">
+    <ClInclude Include="MinHeap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MaxHeap.h">
@@ -29,7 +29,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="minHeap.cpp">
+    <ClCompile Include="MinHeap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MaxHeap.cpp">
