@@ -12,7 +12,7 @@
 #include"Heap.cpp"
 using namespace std;
 
-//Protoypes
+//Prototypes
 void Option1();
 void Option2();
 void Option3();
