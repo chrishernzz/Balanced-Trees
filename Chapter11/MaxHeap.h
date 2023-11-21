@@ -5,17 +5,18 @@
 #include <iostream>
 using namespace std;
 
-//input (1) header files inputs validation
+//input (2) header files inputs validation
 int inputInteger(string prompt);
 
-//precondition: going to create a class called max heap 
-//postcondition: going to then create a template class and pass in a vector to keep track of our data (heap)
+//Precondition: going to create a max heap template class
+//Postcondition: going to then create a vector that will hold my data that is a heap
 template <class T>
-class MaxHeap {
+class MaxHeap
+{
 private:
 	vector <T> Heap;
 public:
-
+	
 	// Constructor
 	MaxHeap();
 	MaxHeap(const vector<T>& array);
@@ -28,6 +29,8 @@ public:
 	void pushHeap(T value);
 	void display();
 	bool search(const T& Item);
+	void sort();
+	bool isHeap(const vector<T>& array);
 
 	bool operator<(MaxHeap<T> obj);
 };

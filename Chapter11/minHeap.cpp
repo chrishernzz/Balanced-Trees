@@ -1,31 +1,43 @@
 #include "minHeap.h"
 
+//************************** Constructor **********************//
+// Default constructor
 template<class Item>
-minHeap<Item>::minHeap()
+MinHeap<Item>::MinHeap()
 {
 	make_heap(heap.begin(), heap.end(), greater<Item>());
 }
 
+// Argument constructor
+// Precondition: an non-empty array
+// Postcondition: create a heap base on the array
 template<class Item>
-minHeap<Item>::minHeap(const vector<Item>& array) : heap(array)
+MinHeap<Item>::MinHeap(const vector<Item>& array) : heap(array)
 {
 	make_heap(heap.begin(), heap.end(), greater<Item>());
 }
 
+//************************** Public Functions **********************//
+//Precondition: NA
+//Postcondition: return the size of the heap
 template<class Item>
-int minHeap<Item>::sizeHeap()
+int MinHeap<Item>::sizeHeap()
 {
 	return heap.size();
 }
 
+//Precondition: NA
+//Postcondition: return true if the heap is empty otherwise false
 template<class Item>
-bool minHeap<Item>::emptyHeap()
+bool MinHeap<Item>::emptyHeap()
 {
 	return heap.empty();
 }
 
+//Precondition: NA
+//Postcondition: insert an element to the heap
 template<class Item>
-void minHeap<Item>::pushMinHeap(Item entry)
+void MinHeap<Item>::pushMinHeap(Item entry)
 {
 	bool check = false;
 	Item temp;
@@ -58,21 +70,27 @@ void minHeap<Item>::pushMinHeap(Item entry)
 	push_heap(heap.begin(), heap.end(), greater<Item>());
 }
 
+//Precondition: NA
+//Postcondition: return the front element of the heap
 template<class Item>
-Item minHeap<Item>::frontHeap()
+Item MinHeap<Item>::frontHeap()
 {
 	return heap.front();
 }
 
+//Precondition: the heap has to be not empty
+//Postcondition: pop the front element of the heap
 template<class Item>
-void minHeap<Item>::popMinHeap()
+void MinHeap<Item>::popMinHeap()
 {
 	pop_heap(heap.begin(), heap.end(), greater<Item>());
 	heap.pop_back();
 }
 
+//Precondition: the heap has to be not empty
+//Postcondition: display the heap
 template<class Item>
-void minHeap<Item>::displayHeap()
+void MinHeap<Item>::displayHeap()
 {
 	cout << "\n\t\t\tThe Heap: ";
 	for (int i = 0; i < heap.size(); i++)
@@ -83,8 +101,10 @@ void minHeap<Item>::displayHeap()
 	cout << endl;
 }
 
+//Precondition: the heap has to be not empty
+//Postcondition: return true if the value is find in the heap, otherwise return false
 template <class Item>
-bool minHeap<Item>::search(const Item& value)
+bool MinHeap<Item>::search(const Item& value)
 {
 	for (int i = 0; i < heap.size(); i++)
 	{
@@ -97,8 +117,11 @@ bool minHeap<Item>::search(const Item& value)
 	return false;
 }
 
+//****************************** Overload Operator ****************************//
+//Precondition: a MaxHeap object
+//Postcondition: return true if this object is smaller than the parameter else return false
 template <class Item>
-bool minHeap<Item>::operator<(minHeap<Item> obj)
+bool MinHeap<Item>::operator<(MinHeap<Item> obj)
 {
 	return heap.size() < obj.sizeHeap();
 }

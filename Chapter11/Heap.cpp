@@ -160,7 +160,7 @@ void Heap<T>::menu() {
         cout << "\n\t\t" + string(70, char(205));
 
         switch (toupper(inputChar("\n\t\t\tOption: ", static_cast<string>("ABCDEFGHIJ0")))) {
-        case '0': return; break;
+        case '0': system("cls"); return; break;
         case 'A': 
         {
             int size = inputInteger("\n\t\t\tEnter the size of the dynamic array: ", true);

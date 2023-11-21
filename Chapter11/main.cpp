@@ -1,5 +1,5 @@
 //Name: Christian Hernandez
-//Date: 11/20/2023
+//Date: 11/13/2023
 //subscription: CMPR131
 
 //Credit: Christian Hernandez,Bryan Alarcon,Thanh Tran, Joe Bryant,Erik Santana, Saul Merino
@@ -7,64 +7,68 @@
 #include<iostream>
 #include<string>
 #include"input (2).h"
-#include"minHeap.cpp"
+#include"MinHeap.cpp"
 #include"MaxHeap.cpp"
 #include"Heap.cpp"
 using namespace std;
 
-//prototypes
 void Option1();
 void Option2();
 void Option3();
 void Max_Heap();
 void Min_Heap();
 
-int main() {
-    minHeap<int> min;
-    do {
-        cout << "\n\tCMPR131 Chapter 11: Heaps by Christian Hernandez (11/20/23)\n";
-        cout << "\t" << string(100, char(205)) << endl;
-        cout << "\t\t1> Heap using vector\n";
-        cout << "\t\t2> Union and intersect of heaps\n";
-        cout << "\t\t3> Heap in C++ STL\n";
-        cout << "\t" << string(100, char(196)) << endl;
-        cout << "\t\t0> Exit\n";
-        cout << "\t" << string(100, char(205)) << endl;
+int main()
+{
+	MinHeap<int> min;
+	do
+	{
+		cout << "\n\tCMPR131 Chapter 11: Heaps by Joe Bryant (11/20/23)\n";
+		cout << "\t" << string(100, char(205)) << endl;
+		cout << "\t\t1> Heap using vector\n";
+		cout << "\t\t2> Union and intersect of heaps\n";
+		cout << "\t\t3> Heap in C++ STL\n";
+		cout << "\t" << string(100, char(196)) << endl;
+		cout << "\t\t0> Exit\n";
+		cout << "\t" << string(100, char(205)) << endl;
 
-        switch (inputInteger("\t\tOption: ", 0, 3))
-        {
-        case 0:
-        {
-            exit(1);
-        }
-        break;
-        case 1:
-        {
+		switch (inputInteger("\t\tOption: ", 0, 3))
+		{
+		case 0:
+		{
+			exit(1);
+		}
+		break;
+		case 1:
+		{
             system("cls");
             Option1();
-        }
-        break;
-        case 2:
-        {
+		}
+		break;
+		case 2:
+		{
             system("cls");
             Option2();
-        }
-        break;
-        case 3:
-        {
+		}
+		break;
+		case 3:
+		{
             system("cls");
             Option3();
-        }
-        break;
-        }
-    } while (true);
-
-    return 0;
+		}
+		break;
+		}
+	} while (true);
+	
+	return 0;
 }
-//precondition: going to create the menu for the heap 
-//postcondition: going to then return the option that the user wants to do 
-void Option1() {
-    do {
+
+//Precondition: NA
+//Postcondition: Display Option 1 menu
+void Option1()
+{
+    do
+    {
         system("cls");
         cout << "\n\t\t1> Heap using vector";
         cout << "\n\t\t" + string(70, char(205));
@@ -89,10 +93,12 @@ void Option1() {
 
 //Precondition: NA
 //Postcondition: Display Option Max Heap Option
-void Max_Heap() {
+void Max_Heap()
+{
     MaxHeap<int> heap;
 
-    do {
+    do
+    {
         system("cls");
         cout << "\n\t\tB> Max Heap";
         cout << "\n\t\t" + string(70, char(205));
@@ -182,12 +188,14 @@ void Max_Heap() {
     } while (true);
 }
 
-//precondition: going to create the min heap menu
-//postcondition: going to then pass in the minHeap class and pass in an int
-void Min_Heap() {
-    minHeap<int> heap2;
+//Precondition: NA
+//Postcondition: Display Option Min Heap Option
+void Min_Heap()
+{
+    MinHeap<int> heap2;
 
-    do {
+    do
+    {
         system("cls");
         cout << "\n\t\tA> Min Heap";
         cout << "\n\t\t" + string(70, char(205));
@@ -223,7 +231,7 @@ void Min_Heap() {
             }
         }
         break;
-
+          
         case 3:
         {
             heap2.pushMinHeap(inputInteger("\n\t\t\tEnter an integer element to push onto the heap: "));
@@ -279,9 +287,11 @@ void Min_Heap() {
 
 //Precondition: NA
 //Postcondition: Display Option 2 menu
-void Option2() {
+void Option2()
+{
 
-    do {
+    do
+    {
         system("cls");
         cout << "\n\t\t2> Union and intersect heap";
         cout << "\n\t\t" + string(70, char(205));
@@ -296,7 +306,7 @@ void Option2() {
 
         switch (toupper(inputChar("\n\t\t\tOption: ", static_cast<string>("ABCD0"))))
         {
-        case '0': return;
+        case '0': system("cls"); return;
         case 'A':
         {
             vector<int> array1 = { 12, 5, 6, 2 };
@@ -374,13 +384,13 @@ void Option2() {
             vector<int> array1 = { 2 ,5, 6, 12 };
             vector<int> array2 = { 6, 12, 9 };
 
-            minHeap<int> heap1(array1);
-            minHeap<int> heap2(array2);
+            MinHeap<int> heap1(array1);
+            MinHeap<int> heap2(array2);
 
             if (heap2 < heap1)
             {
-                minHeap<int> heapTemp(array2);
-                minHeap<int> merge_min_heap(heap1);
+                MinHeap<int> heapTemp(array2);
+                MinHeap<int> merge_min_heap(heap1);
 
                 int size = heapTemp.sizeHeap();
 
@@ -412,13 +422,13 @@ void Option2() {
             vector<int> array1 = { 2 ,5, 6, 12 };
             vector<int> array2 = { 6, 12, 9 };
 
-            minHeap<int> heap1(array1);
-            minHeap<int> heap2(array2);
+            MinHeap<int> heap1(array1);
+            MinHeap<int> heap2(array2);
 
             if (heap2 < heap1)
             {
-                minHeap<int> heapTemp(array2);
-                minHeap<int> intersect_heap;
+                MinHeap<int> heapTemp(array2);
+                MinHeap<int> intersect_heap;
 
                 int size = heapTemp.sizeHeap();
 
@@ -452,7 +462,9 @@ void Option2() {
 
 //Precondition: NA
 //Postcondition: Display Option 3 menu
-void Option3() {
+void Option3()
+{
     Heap<int> temp;
+
     temp.menu();
 }

@@ -9,13 +9,13 @@
 #include <string>
 using namespace std;
 
-//input (1) header files inputs validation
+//input (2) header files inputs validation
 char inputChar(string prompt, string options);
 int inputInteger(string prompt);
 int inputInteger(string prompt, bool posNeg);
 
-//precondition: going to create a class called heap 
-//postcondition: going to then create a template class and pass in a vector to keep track of our data (heap)
+//Precondition: going to create a template class
+//Postcondition: going to then create a vector that will hold my data that is a heap
 template <class T>
 class Heap {
 private:
